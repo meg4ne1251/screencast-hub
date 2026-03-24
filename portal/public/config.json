@@ -1,0 +1,67 @@
+{
+  "portalName": "Screencast Hub",
+  "subtitle": "Media Center",
+  "columns": 3,
+  "services": [
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "color": "#E50914",
+      "icon": "/icons/netflix.svg",
+      "launchType": "native",
+      "launchTarget": "netflix",
+      "description": "映画・ドラマ"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "color": "#FF0000",
+      "icon": "/icons/youtube.svg",
+      "launchType": "browser",
+      "launchTarget": "https://www.youtube.com",
+      "description": "動画"
+    },
+    {
+      "id": "prime-video",
+      "name": "Prime Video",
+      "color": "#00A8E1",
+      "icon": "/icons/prime-video.svg",
+      "launchType": "browser",
+      "launchTarget": "https://www.amazon.co.jp/gp/video/storefront",
+      "description": "映画・ドラマ・アニメ"
+    },
+    {
+      "id": "unext",
+      "name": "U-NEXT",
+      "color": "#00B900",
+      "icon": "/icons/unext.svg",
+      "launchType": "browser",
+      "launchTarget": "https://video.unext.jp",
+      "description": "映画・ドラマ・アニメ"
+    },
+    {
+      "id": "fod",
+      "name": "FOD",
+      "color": "#FF6B00",
+      "icon": "/icons/fod.svg",
+      "launchType": "browser",
+      "launchTarget": "https://fod.fujitv.co.jp",
+      "description": "フジテレビ見逃し"
+    },
+    {
+      "id": "abema",
+      "name": "ABEMA",
+      "color": "#33CC33",
+      "icon": "/icons/abema.svg",
+      "launchType": "browser",
+      "launchTarget": "https://abema.tv",
+      "description": "ニュース・アニメ・バラエティ"
+    }
+  ],
+  "appLauncherUrl": "http://localhost:3001",
+  "theme": {
+    "bgGradient": "linear-gradient(160deg, #0a0a0f 0%, #1a1a2e 40%, #16213e 100%)",
+    "accentColor": "#6366f1",
+    "fontFamily": "'SF Pro Display', 'Hiragino Sans', 'Yu Gothic UI', -apple-system, BlinkMacSystemFont, sans-serif"
+  }
+}

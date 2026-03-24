@@ -1,0 +1,280 @@
+/* ===========================
+   Portal Layout
+   =========================== */
+.portal {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+/* Background orbs */
+.portal__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portal__orb--top {
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+}
+
+.portal__orb--bottom {
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+}
+
+/* ===========================
+   Header
+   =========================== */
+.portal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.portal__title {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portal__subtitle {
+  font-size: 14px;
+  opacity: 0.4;
+  margin: 4px 0 0;
+  font-weight: 300;
+}
+
+/* ===========================
+   Clock
+   =========================== */
+.clock {
+  text-align: right;
+}
+
+.clock-time {
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.clock-date {
+  font-size: 16px;
+  opacity: 0.6;
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+/* ===========================
+   Service Grid
+   =========================== */
+.portal__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.portal__grid {
+  display: grid;
+  gap: 28px;
+  justify-content: center;
+}
+
+/* ===========================
+   Service Card
+   =========================== */
+.service-card {
+  width: 220px;
+  height: 140px;
+  border-radius: 18px;
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--service-color) 40%, transparent),
+    color-mix(in srgb, var(--service-color) 20%, transparent)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+  outline: none;
+}
+
+.service-card--focused {
+  transform: scale(1.12);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--service-color) 87%, transparent),
+    color-mix(in srgb, var(--service-color) 53%, transparent)
+  );
+  box-shadow:
+    0 12px 40px color-mix(in srgb, var(--service-color) 40%, transparent),
+    0 0 0 3px rgba(255, 255, 255, 0.4);
+  z-index: 10;
+}
+
+/* Glassmorphism shine overlay */
+.service-card__shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 18px 18px 0 0;
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.service-card--focused .service-card__shine {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.service-card__icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: filter 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card__icon--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.service-card:not(.service-card--focused) .service-card__icon {
+  filter: grayscale(20%);
+}
+
+.service-card__name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card__desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.portal__footer {
+  text-align: center;
+  padding: 20px 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.portal__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.portal__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.portal__dot--active {
+  width: 24px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.portal__hint {
+  font-size: 13px;
+  opacity: 0.3;
+  font-weight: 300;
+}
+
+/* ===========================
+   Launch Overlay
+   =========================== */
+.launch-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.launch-overlay__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.launch-overlay__icon--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.launch-overlay__name {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.launch-overlay__status {
+  font-size: 16px;
+  opacity: 0.5;
+  font-weight: 300;
+}
