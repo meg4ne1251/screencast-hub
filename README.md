@@ -59,8 +59,8 @@ screencast-hub/
 ```bash
 cd portal
 npm install
-npm run dev      # 開発サーバー（http://localhost:5173）
-npm run build    # 本番ビルド（build/ に出力）
+npm run dev      # 開発サーバー（http://localhost:3000）
+npm run build    # 本番ビルド（dist/ に出力）
 ```
 
 本番環境では `http-server` で配信:
